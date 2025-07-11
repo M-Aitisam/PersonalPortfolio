@@ -1,0 +1,294 @@
+import emoji from "react-easy-emoji";
+import {
+  EducationType,
+  ExperienceType,
+  FeedbackType,
+  ProjectType,
+  SkillsSectionType,
+  SkillBarsType,
+  SEODataType,
+  SocialLinksType,
+  GreetingsType,
+} from "./types/sections";
+
+export const greetings: GreetingsType = {
+  name: "Aitisam Ahmed",
+  title: "Hi all, I'm Aitisam",
+  description:
+    "I'm a Junior DevOps Engineer at Cyberoide Tech, skilled in AWS, Git, Docker, and CI/CD. Currently pursuing internships in .NET (C#) at Air University and DevOps at Bytewise. Passionate about automation, cloud deployment, and optimizing development workflows.",
+  resumeLink: "#",
+};
+
+export const openSource = {
+  githubUserName: "M-Aitisam",
+};
+
+export const contact = {};
+
+export const socialLinks: SocialLinksType = {
+  email: "mailto:aitisamahmed24@gmail.com",
+  linkedin: "https://www.linkedin.com/in/aitisam-ahmed-9395b62a0/",
+  github: "https://github.com/M-Aitisam",
+  instagram: "https://www.instagram.com/aitisam24/",
+  // facebook: 'https://www.facebook.com/1hanzla100',
+  // twitter: 'https://twitter.com/1hanzla100',
+};
+
+export const skillsSection: SkillsSectionType = {
+  title: "What I Do",
+  subTitle: "CLOUD-NATIVE FULL STACK DEVELOPER & DEVOPS ENGINEER WHO BREATHES LIFE INTO CODE AND INFRASTRUCTURE",
+  data: [
+    {
+      title: "Full Stack & Cloud Development",
+      lottieAnimationFile: "/lottie/skills/fullstack.json",
+      skills: [
+        emoji("⚡ Architecting cloud-native applications with AWS EC2, Lambda, and S3 for bulletproof scalability"),
+        emoji("⚡ Crafting CI/CD pipelines that deploy faster than you can say 'Jenkins' (50% faster deployments)"),
+        emoji("⚡ Containerizing dreams into reality with Docker and orchestrating them with Kubernetes"),
+        emoji("⚡ Building .NET Core/Blazor applications that handle traffic spikes like a champ"),
+        emoji("⚡ Securing systems with white-hat tools like Nmap and Nessus before hackers even wake up"),
+      ],
+      softwareSkills: [
+        {
+          skillName: "Python",
+          iconifyTag: "logos:python",
+        },
+        {
+          skillName: "DotNET Core",
+          iconifyTag: "simple-icons:dotnet",
+        },
+        {
+          skillName: "JavaScript",
+          iconifyTag: "logos:javascript",
+        },
+        {
+          skillName: "Nodejs",
+          iconifyTag: "logos:nodejs-icon",
+        },
+        {
+          skillName: "AWS",
+          iconifyTag: "logos:aws",
+        },
+        {
+          skillName: "Docker",
+          iconifyTag: "logos:docker-icon",
+        },
+        {
+          skillName: "Jenkins",
+          iconifyTag: "logos:jenkins",
+        },
+        {
+          skillName: "GitHub",
+          iconifyTag: "akar-icons:github-fill",
+        },
+        {
+          skillName: "Linux",
+          iconifyTag: "flat-color-icons:linux",
+        },
+        {
+          skillName: "SQL Server",
+          iconifyTag: "simple-icons:microsoftsqlserver",
+        },
+        {
+          skillName: "Bash",
+          iconifyTag: "simple-icons:gnubash",
+        },
+      ],
+    },
+    {
+      title: "DevOps Superpowers",
+      lottieAnimationFile: "/lottie/skills/cloud.json",
+      skills: [
+        emoji("⚡ Automating infrastructure until servers beg for mercy"),
+        emoji("⚡ Implementing ELB and Auto Scaling that laughs at traffic spikes"),
+        emoji("⚡ Securing CI/CD pipelines tighter than Fort Knox"),
+        emoji("⚡ Reducing deployment times by 50% while sipping coffee"),
+      ],
+      softwareSkills: [
+        {
+          skillName: "Terraform",
+          iconifyTag: "logos:terraform-icon",
+        },
+        {
+          skillName: "Ansible",
+          iconifyTag: "logos:ansible",
+        },
+        {
+          skillName: "Kubernetes",
+          iconifyTag: "logos:kubernetes",
+        },
+        {
+          skillName: "Prometheus",
+          iconifyTag: "logos:prometheus",
+        },
+        {
+          skillName: "Grafana",
+          iconifyTag: "logos:grafana",
+        },
+        {
+          skillName: "Nginx",
+          iconifyTag: "logos:nginx",
+        },
+      ],
+    }
+  ],
+};
+
+export const SkillBars: SkillBarsType[] = [
+  {
+    Stack: "Cloud & DevOps",
+    progressPercentage: "90",
+  },
+  {
+    Stack: ".NET & Backend Development",
+    progressPercentage: "85",
+  },
+  {
+    Stack: "CI/CD Pipelines",
+    progressPercentage: "88",
+  },
+  {
+    Stack: "Containerization (Docker)",
+    progressPercentage: "87",
+  },
+  {
+    Stack: "AWS Services",
+    progressPercentage: "83",
+  },
+  {
+    Stack: "Linux Administration",
+    progressPercentage: "80",
+  },
+  {
+    Stack: "Python & Scripting",
+    progressPercentage: "82",
+  },
+  {
+    Stack: "Database Management",
+    progressPercentage: "78",
+  },
+];
+export const educationInfo: EducationType[] = [
+  {
+    schoolName: " Air University Islamabad",
+    subHeader: "Bachelor of Science in Computer Science",
+    duration: "September 2023 - April 2027",
+    desc: "",
+    grade: "Grade A",
+    descBullets: [], // Array of Strings
+  },
+];
+
+export const experience: ExperienceType[] = [
+  {
+    role: "DevOps Intern",
+    company: "Cyberoide Tech",
+    companyLogo: "/img/icons/common/cyberoide.png", // You'll need to add this logo
+    date: "June 2024 - Present",
+    desc: "Implementing CI/CD pipelines using Jenkins and GitHub Actions for automated deployments. Managing cloud infrastructure on AWS including EC2, S3, and Lambda services. Containerizing applications with Docker and optimizing deployment workflows. Implementing security best practices with tools like Nmap and Nessus.",
+    descBullets: [
+      "Reduced deployment times by 50% through Jenkins pipeline optimization",
+      "Implemented auto-scaling solutions handling 2x traffic spikes",
+      "Secured cloud infrastructure through IAM policies and security groups"
+    ],
+  },
+   {
+    role: "Cloud Engineering Fellow",
+    company: "Bytewise Limited",
+    companyLogo: "/img/icons/common/bytewise.png",
+    date: "June 2024 - September 2024",
+    desc: "Specialized in cloud infrastructure design and automation as part of Bytewise's flagship fellowship program. Implemented Infrastructure as Code (IaC) and CI/CD solutions for distributed systems.",
+    descBullets: [
+      "Designed and deployed scalable cloud architectures on AWS using EC2, Lambda, and S3",
+      "Automated infrastructure provisioning with Terraform, reducing deployment time by 65%",
+      "Implemented monitoring solutions with CloudWatch and Prometheus for 10+ microservices",
+      "Optimized cloud costs by 35% through right-sizing resources and implementing auto-scaling"
+    ],
+  },
+  {
+    role: "DevOps Intern",
+    company: "Bytewise",
+    companyLogo: "/img/icons/common/bytewise.png", // You'll need to add this logo
+    date: "June 2024 - September 2024",
+    desc: "Working on cloud automation and infrastructure as code projects. Implementing container orchestration solutions and monitoring systems. Collaborating on CI/CD pipeline development for microservices architecture.",
+    descBullets: [
+      "Automated infrastructure provisioning reducing setup time by 70%",
+      "Implemented centralized logging for 10+ microservices",
+      "Reduced cloud costs by 30% through resource optimization"
+    ],
+  },
+  {
+    role: ".NET Developer Intern",
+    company: "Air University",
+    companyLogo: "/img/icons/common/air-university.png", // You'll need to add this logo
+    date: "July 2024 - August 2024",
+    desc: "Developed scalable web applications using .NET Core and Blazor framework. Designed RESTful APIs and implemented SQL Server database architectures. Enhanced application performance through Entity Framework Core optimizations.",
+    descBullets: [
+      "Built student management system handling 500+ concurrent users",
+      "Reduced API response times by 40% through query optimization",
+      "Implemented role-based authentication for secure access control"
+    ],
+  }
+];
+export const projects: ProjectType[] = [
+  {
+    name: "Developer Portfolio",
+    desc: "Build a simple and efficient Student Attendance Portal in C# using a 3-Tier Architecture for streamlined functionality and easy management.",
+    github: "https://github.com/M-Aitisam/Student-Attendence-System.git",
+    link: "https://developer-portfolio-1hanzla100.vercel.app/",
+  },
+  {
+    name: "Giebo",
+    desc: "A Podcast Platform where creators can easily publish and sell their podcasts, and users can purchase with Handcash BitcoinSV, the future of fast and secure transactions.",
+    link: "https://gibeo.io/",
+  },
+  {
+    name: "O Mejor Oferta",
+    desc: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
+    link: "https://play.google.com/store/apps/details?id=com.duseca.mejor_oferta",
+  },
+  {
+    name: "Hooligan Culture",
+    desc: "A Ecommerce Platform, where shopping meets the future! With HandCash BitcoinSV integration, you can authenticate and purchase products with ease and confidence.",
+    link: "https://hooliganculture.com/",
+  },
+];
+
+export const feedbacks: FeedbackType[] = [
+  {
+    name: "Syed Jamal",
+    role: "Frontend Developer at Meganos Software",
+    feedback:
+      "You were a wonderful addition to our team, alhumdulillah. I'm quite impressed with your abilities and professional practices. You approach problems from a unique perspective and always ask the right question. Finding a good teammate like Hanzla is extremely difficult. He has contributed to the growth of our organization and continues to do so. May Allah bless you with everything you desire.",
+  },
+  {
+    name: "Wajahat Malek",
+    role: "CEO at Duseca Software",
+    feedback:
+      "Hanzla has a deep understanding of web development technologies and is adept at using them to build scalable, robust, and secure web applications. He has worked on various projects, ranging from small-scale to large-scale, and has shown his ability to work collaboratively with others while maintaining a high level of productivity and quality. Hanzla is a pleasure to work with, and I have no doubt that he will be an asset to any team or organization. I highly recommend Hanzla for any Full Stack Django, React.js, or Blockchain development projects, and I wish him all the best in his future endeavors.",
+  },
+  {
+    name: "Zaid Zaffar",
+    role: "CEO at ZR Technologies",
+    feedback:
+      "Very skilled at what he does and has an in depth knowledge of Django and he's always ready to handle any challenges thrown at him. He's been a valuable member of my team and i look forward to working with him in the years to come",
+  },
+];
+
+// See object prototype on /types/section.ts page
+export const seoData: SEODataType = {
+  title: "Aitisam Ahmed",
+  description: greetings.description,
+  author: "Muhammad Aitisam Ahmed",
+  image: "https://github.com/M-Aitisam/MyAvatar/blob/main/IMG_4807.jpg?raw=true",
+  url: "https://AitisamPortfolio.netlify.app/",
+  keywords: [
+    "Aitisam",
+    "Aitisam Ahmed",
+    "M-Aitisam",
+    "MAitisam",
+    "AitisamPortfolio",
+    "Aitisam Portfolio ",
+    "Aitisam Ahmed Portfolio",
+  ],
+};
