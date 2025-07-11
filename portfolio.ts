@@ -235,22 +235,22 @@ export const projects: ProjectType[] = [
     name: "Developer Portfolio",
     desc: "Build a simple and efficient Student Attendance Portal in C# using a 3-Tier Architecture for streamlined functionality and easy management.",
     github: "https://github.com/M-Aitisam/Student-Attendence-System.git",
-    link: "https://developer-portfolio-1hanzla100.vercel.app/",
+  
   },
   {
-    name: "Giebo",
-    desc: "A Podcast Platform where creators can easily publish and sell their podcasts, and users can purchase with Handcash BitcoinSV, the future of fast and secure transactions.",
-    link: "https://gibeo.io/",
+    name: "SmartPOS",
+    desc: "SmartPOS is a C#-based, 3-tier architecture Point of Sale desktop application that runs locally without internet, designed for efficient offline retail transactions.",
+    github: "https://github.com/M-Aitisam/SmartPOS.git",
   },
   {
-    name: "O Mejor Oferta",
-    desc: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
-    link: "https://play.google.com/store/apps/details?id=com.duseca.mejor_oferta",
+    name: "Employee Management System",
+    desc: "Creating an Employee Management System in React: Look professional and work like it’s done in the industry!",
+    github: "https://github.com/M-Aitisam/Employee-Management-System.git",
   },
   {
-    name: "Hooligan Culture",
-    desc: "A Ecommerce Platform, where shopping meets the future! With HandCash BitcoinSV integration, you can authenticate and purchase products with ease and confidence.",
-    link: "https://hooliganculture.com/",
+    name: "SpeechifyX",
+    desc: "A Blazor web app for Speech-to-Text and Text-to-Speech with audio upload and voice features, deployed via a CI/CD pipeline using Jenkins and Docker for automated, scalable delivery.",
+    github: "https://github.com/M-Aitisam/SpeechifyX.git",
   },
 ];
 
