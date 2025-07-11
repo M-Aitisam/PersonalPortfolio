@@ -15,8 +15,8 @@ export const greetings: GreetingsType = {
   name: "Aitisam Ahmed",
   title: "Hi all, I'm Aitisam",
   description:
-    "I'm a Junior DevOps Engineer at Cyberoide Tech, skilled in AWS, Git, Docker, and CI/CD. Currently pursuing internships in .NET (C#) at Air University and DevOps at Bytewise. Passionate about automation, cloud deployment, and optimizing development workflows.",
-  resumeLink: "#",
+    "I'm Muhammad Aitisam Ahmed, a passionate DevOps Engineer skilled in CI/CD, Docker, Jenkins,Kubernetes,Terraform and AWS. I build scalable, secure, and automated infrastructures that streamline development and deployment workflows.",
+  resumeLink: 'https://m-aitisam.github.io/Curriculum-vitae/BSCS_Aitisam_Devops_CV.pdf',
 };
 
 export const openSource = {
@@ -257,21 +257,21 @@ export const projects: ProjectType[] = [
 export const feedbacks: FeedbackType[] = [
   {
     name: "Syed Jamal",
-    role: "Frontend Developer at Meganos Software",
+    role: "DevOps Team Lead at Meganos Software",
     feedback:
-      "You were a wonderful addition to our team, alhumdulillah. I'm quite impressed with your abilities and professional practices. You approach problems from a unique perspective and always ask the right question. Finding a good teammate like Hanzla is extremely difficult. He has contributed to the growth of our organization and continues to do so. May Allah bless you with everything you desire.",
+      "Muhammad Aitisam was a fantastic addition to our DevOps team. He streamlined our deployment workflows, implemented GitHub Actions for CI/CD, and resolved complex infrastructure issues with clarity and speed. His proactive communication and deep Linux knowledge made our releases faster and more stable.",
   },
   {
     name: "Wajahat Malek",
     role: "CEO at Duseca Software",
     feedback:
-      "Hanzla has a deep understanding of web development technologies and is adept at using them to build scalable, robust, and secure web applications. He has worked on various projects, ranging from small-scale to large-scale, and has shown his ability to work collaboratively with others while maintaining a high level of productivity and quality. Hanzla is a pleasure to work with, and I have no doubt that he will be an asset to any team or organization. I highly recommend Hanzla for any Full Stack Django, React.js, or Blockchain development projects, and I wish him all the best in his future endeavors.",
+      "Aitisam's command over Docker, Jenkins, and AWS transformed the way we ship our products. His automated CI/CD pipelines cut our deployment time in half and eliminated manual errors. His GitHub workflow optimization and system-level insights are top-tier. Highly recommend him for any DevOps-driven environment.",
   },
   {
     name: "Zaid Zaffar",
     role: "CEO at ZR Technologies",
     feedback:
-      "Very skilled at what he does and has an in depth knowledge of Django and he's always ready to handle any challenges thrown at him. He's been a valuable member of my team and i look forward to working with him in the years to come",
+      "Muhammad Aitisam consistently solved high-impact infrastructure issues for us. From Docker containerization to secure GitHub-based deployments, he brought reliability and scalability to our projects. He's a reliable engineer who takes full ownership of the DevOps lifecycle.",
   },
 ];
 
