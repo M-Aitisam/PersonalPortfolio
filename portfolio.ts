@@ -30,8 +30,8 @@ export const socialLinks: SocialLinksType = {
   linkedin: "https://www.linkedin.com/in/aitisam-ahmed-9395b62a0/",
   github: "https://github.com/M-Aitisam",
   instagram: "https://www.instagram.com/aitisam24/",
-  // facebook: 'https://www.facebook.com/1hanzla100',
-  // twitter: 'https://twitter.com/1hanzla100',
+  facebook: 'https://www.facebook.com/muhammad.aitisam.ahmed',
+  twitter: 'https://x.com/aitisam24',
 };
 
 export const skillsSection: SkillsSectionType = {

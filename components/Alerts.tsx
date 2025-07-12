@@ -1,17 +1,36 @@
 import React from "react";
 import { UncontrolledAlert } from "reactstrap";
 
-type Props = {
+interface AlertProps {
   message: string;
-  color: string;
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
   icon: string;
-};
+  className?: string;
+  fade?: boolean;
+}
 
-const Alert = ({ message, color, icon }: Props) => {
+const Alert: React.FC<AlertProps> = ({
+  message,
+  color = "info",
+  icon,
+  className = "",
+  fade = true,
+}) => {
   return (
-    // this should reappear every time the user clicks on the button
-    <UncontrolledAlert color={color}>
-      <span className="alert-inner--icon">
+    <UncontrolledAlert
+      color={color}
+      className={`d-flex align-items-center ${className}`}
+      fade={fade}
+    >
+      <span className="alert-inner--icon me-2">
         <i className={icon} />
       </span>
       <span className="alert-inner--text">

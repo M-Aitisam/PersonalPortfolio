@@ -2,12 +2,16 @@ import React from "react";
 import EducationCard from "../components/EducationCard";
 import { educationInfo } from "../portfolio";
 import { Container, Row, Col } from "reactstrap";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
     educationInfo && (
-      <Fade bottom duration={2000}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <section className="section pb-0 bg-gradient-info my-5">
           <Container>
             <div className="d-flex px-3">
@@ -21,13 +25,17 @@ const Education = () => {
               </div>
             </div>
             <Row className="row-grid align-items-center">
-              {educationInfo.map(info => {
-                return (
-                  <Col className="order-lg-1" lg="6" key={info.schoolName}>
+              {educationInfo.map((info, index) => (
+                <Col className="order-lg-1" lg="6" key={info.schoolName}>
+                  <motion.div
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
                     <EducationCard {...info} />
-                  </Col>
-                );
-              })}
+                  </motion.div>
+                </Col>
+              ))}
             </Row>
           </Container>
           <div className="separator separator-bottom separator-skew zindex-100">
@@ -43,7 +51,7 @@ const Education = () => {
             </svg>
           </div>
         </section>
-      </Fade>
+      </motion.div>
     )
   );
 };

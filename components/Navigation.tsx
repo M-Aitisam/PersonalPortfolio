@@ -1,33 +1,106 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { greetings, socialLinks } from "../portfolio";
 import Headroom from "headroom.js";
-import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
+import {
+  UncontrolledCollapse,
+  NavbarBrand,
+  Navbar,
+  NavItem,
+  NavLink,
+  Nav,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faGithub,
+  faLinkedin,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
 
 const Navigation = () => {
   const [collapseClasses, setCollapseClasses] = useState("");
-  const onExiting = () => setCollapseClasses("collapsing-out");
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const headroomInstance = useRef<Headroom | null>(null);
 
+  const onExiting = () => setCollapseClasses("collapsing-out");
   const onExited = () => setCollapseClasses("");
 
   useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main")!);
-    // initialise
-    headroom.init();
-  });
+    if (!navbarRef.current) return;
+
+    try {
+      // Initialize Headroom with default options
+      headroomInstance.current = new Headroom(navbarRef.current, {
+        tolerance: {
+          down: 10,
+          up: 20
+        },
+        offset: 100,
+        classes: {
+          initial: "headroom",
+          pinned: "headroom--pinned",
+          unpinned: "headroom--unpinned",
+          top: "headroom--top",
+          notTop: "headroom--not-top",
+          bottom: "headroom--bottom",
+          notBottom: "headroom--not-bottom"
+        }
+      });
+
+      // Initialize Headroom
+      headroomInstance.current.init();
+
+      return () => {
+        // Safely destroy Headroom instance
+        if (headroomInstance.current) {
+          try {
+            headroomInstance.current.destroy();
+          } catch (e) {
+            console.warn("Error destroying Headroom:", e);
+          }
+          headroomInstance.current = null;
+        }
+      };
+    } catch (error) {
+      console.error("Headroom initialization error:", error);
+    }
+  }, []);
+
+  const socialIcons = [
+    { key: "facebook", icon: faFacebook },
+    { key: "instagram", icon: faInstagram },
+    { key: "github", icon: faGithub },
+    { key: "linkedin", icon: faLinkedin },
+    { key: "twitter", icon: faTwitter }
+  ];
 
   return (
-    <>
-      <header className="header-global">
-        <Navbar className="navbar-main navbar-transparent navbar-light headroom" expand="lg" id="navbar-main">
+    <header className="header-global">
+      <div ref={navbarRef}>
+        <Navbar
+          className="navbar-main navbar-transparent navbar-light" 
+          expand="lg" 
+          id="navbar-main"
+        >
           <Container>
             <NavbarBrand href="/" className="mr-lg-5">
               <h2 className="text-white" id="nav-title">
                 {greetings.name}
               </h2>
             </NavbarBrand>
-            <button className="navbar-toggler" aria-label="navbar_toggle" id="navbar_global">
+            
+            <button 
+              className="navbar-toggler" 
+              aria-label="Toggle navigation"
+              id="navbar_global"
+            >
               <span className="navbar-toggler-icon" />
             </button>
+            
             <UncontrolledCollapse
               toggler="#navbar_global"
               navbar
@@ -50,83 +123,32 @@ const Navigation = () => {
                   </Col>
                 </Row>
               </div>
+              
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                {socialLinks.facebook && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Facebook"
-                      className="nav-link-icon"
-                      href={socialLinks.facebook}
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Facebook</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.instagram && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Instagram"
-                      className="nav-link-icon"
-                      href={socialLinks.instagram}
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Instagram</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.github && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Github"
-                      className="nav-link-icon"
-                      href={socialLinks.github}
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Github</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.linkedin && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Linkedin"
-                      className="nav-link-icon"
-                      href={socialLinks.linkedin}
-                      target="_blank"
-                    >
-                      <i className="fa fa-linkedin" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Linkedin</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.twitter && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Twitter"
-                      className="nav-link-icon"
-                      href={socialLinks.twitter}
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Twitter</span>
-                    </NavLink>
-                  </NavItem>
-                )}
+                {socialIcons.map(({ key, icon }) => (
+                  socialLinks[key] && (
+                    <NavItem key={key}>
+                      <NavLink
+                        rel="noopener noreferrer"
+                        aria-label={key}
+                        className="nav-link-icon"
+                        href={socialLinks[key]}
+                        target="_blank"
+                      >
+                        <FontAwesomeIcon icon={icon} />
+                        <span className="nav-link-inner--text d-lg-none ms-2">
+                          {key.charAt(0).toUpperCase() + key.slice(1)}
+                        </span>
+                      </NavLink>
+                    </NavItem>
+                  )
+                ))}
               </Nav>
             </UncontrolledCollapse>
           </Container>
         </Navbar>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 
