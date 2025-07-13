@@ -5,6 +5,7 @@ export type SEODataType = {
   image?: string;
   url?: string;
   keywords: string[];
+  twitterHandle?: string;
 };
 
 // https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures

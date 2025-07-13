@@ -15,7 +15,7 @@ function SEO() {
           description: seoData.description,
           images: [
             {
-              url: seoData.image,
+              url: seoData.image || '/developerImage.jpg',
               width: 1200,
               height: 630,
               alt: seoData.title,
@@ -24,7 +24,7 @@ function SEO() {
           siteName: seoData.title,
         }}
         twitter={{
-          handle: seoData.twitterHandle,
+           handle: seoData.twitterHandle || '@defaultHandle',
           site: seoData.url,
           cardType: 'summary_large_image',
         }}
@@ -35,7 +35,7 @@ function SEO() {
           },
           {
             name: 'author',
-            content: seoData.author,
+           content: seoData.author || 'Aitisam Ahmed',
           },
           {
             name: 'robots',

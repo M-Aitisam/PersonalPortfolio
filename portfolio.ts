@@ -291,4 +291,5 @@ export const seoData: SEODataType = {
     "Aitisam Portfolio ",
     "Aitisam Ahmed Portfolio",
   ],
+   twitterHandle: '@AitisamAhmed'
 };
