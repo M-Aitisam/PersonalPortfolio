@@ -2,19 +2,17 @@
 const nextConfig = {
   reactStrictMode: false,
   
-  // Essential for static export (Cloudflare Pages)
+  // Required for static export (replaces 'next export')
   output: 'export',
   
-  // Image optimization (disabled for static export)
+  // Image optimization (must be disabled for static export)
   images: {
     unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
-        pathname: '**', // Allow all paths under this hostname
       },
-      // Add other domains you use (e.g., for portfolio images)
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
@@ -22,29 +20,25 @@ const nextConfig = {
     ]
   },
 
-  // Build-time configurations
+  // Build configurations
   eslint: {
-    ignoreDuringBuilds: true, // Disable if ESLint errors are resolved
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true, // Disable if TypeScript errors are resolved
+    ignoreBuildErrors: true,
   },
 
-  // Optional: Add basePath if deploying to a subdirectory (e.g., /portfolio)
-  // basePath: '/portfolio',
+  // Remove redirects/rewrites (not supported with static export)
+  // redirects: async () => [],
+  // rewrites: async () => [],
 
   // Enable trailing slashes for better compatibility
   trailingSlash: true,
 
-  // (Optional) Redirects/rewrites for static export
-  async redirects() {
-    return [
-      {
-        source: '/old-path',
-        destination: '/new-path',
-        permanent: true,
-      },
-    ]
+  // (Optional) Add webpack config if needed
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, path: false };
+    return config;
   }
 };
 
