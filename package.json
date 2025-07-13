@@ -5,25 +5,23 @@
   "main": "index.js",
   "repository": "https://github.com/M-Aitisam/PersonalPortfolio.git",
   "author": " Muhammad Aitisam Ahmed",
-
-  
   "scripts": {
-  "dev": "next dev",
-  "build": "next build && next export",
-  "start": "next start",
-  "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-  "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-  "prettier": "prettier --check .",
-  "prettier:fix": "prettier --write ."
-},
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
+  },
   "dependencies": {
     "@apollo/client": "^3.9.0",
     "@eslint/config-array": "^0.21.0",
     "@eslint/object-schema": "^2.1.6",
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@iconify/react": "^5.0.1",
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
@@ -58,7 +56,7 @@
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.56",
     "@types/react-lottie": "^1.2.7",
-    "eslint": "^9.31.0",
+    "eslint": "^8.57.1",
     "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5",
@@ -67,5 +65,9 @@
   "engines": {
     "node": "20.19.3",
     "npm": ">=10.8.2"
-  }
+  },
+  "cacheDirectories": [
+    ".next/cache",
+    "node_modules"
+  ]
 }
