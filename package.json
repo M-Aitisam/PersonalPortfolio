@@ -28,6 +28,7 @@
     "classnames": "^2.5.1",
     "core-js": "^3.44.0",
     "critters": "^0.0.23",
+    "express": "^5.1.0",
     "framer-motion": "^11.2.5",
     "glob": "^11.0.3",
     "graphql": "^16.8.1",
@@ -63,7 +64,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "20.x",
-    "npm": ">=9.0.0"
+    "node": "20.19.3",
+    "npm": ">=10.8.2"
   }
 }
